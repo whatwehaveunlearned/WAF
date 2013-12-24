@@ -1,9 +1,19 @@
 """Common settings and globals."""
 
-
+import os
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
+#Normally you should not import ANYTHING from Django directly into your settings, but ImproperlyConfigured is an exception.
+from django.core.exceptions import ImproperlyConfigured
+
+def get_env_variable(waf_key):
+    """Get the environment variable or return exception"""
+    try:
+        return os.environ[WAF_KEY]
+    except KeyError:
+        error_msg="Set the %s environment variable" %waf_key
+        raise ImproperlyConfigured(error_msg)
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:

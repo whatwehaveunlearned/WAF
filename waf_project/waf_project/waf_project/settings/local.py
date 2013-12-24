@@ -5,7 +5,8 @@ from os.path import join, normpath
 
 from base import *
 
-
+#Load secret key from environmental variable
+WAF_KEY=get_env_variable("wAF_KEY")
 ########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
