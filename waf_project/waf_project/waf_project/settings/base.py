@@ -7,12 +7,12 @@ from sys import path
 #Normally you should not import ANYTHING from Django directly into your settings, but ImproperlyConfigured is an exception.
 from django.core.exceptions import ImproperlyConfigured
 
-def get_env_variable(waf_key):
+def get_env_variable(var_name):
     """Get the environment variable or return exception"""
     try:
-        return os.environ[WAF_KEY]
+        return os.environ[var_name]
     except KeyError:
-        error_msg="Set the %s environment variable" %waf_key
+        error_msg="Set the %s environment variable" %var_name
         raise ImproperlyConfigured(error_msg)
 
 ########## PATH CONFIGURATION
