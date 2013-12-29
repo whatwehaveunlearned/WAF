@@ -5,6 +5,7 @@ from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
 #Normally you should not import ANYTHING from Django directly into your settings, but ImproperlyConfigured is an exception.
+#Used to gather a environmental variable for securing passwords
 from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name):
@@ -43,7 +44,7 @@ TEMPLATE_DEBUG = DEBUG
 ########## MANAGER CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ('Your Name', 'your_email@example.com'),
+    ('Alberto Gonzalez', 'agon@hawaii.edu'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -68,7 +69,7 @@ DATABASES = {
 
 ########## GENERAL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'Pacific/Honolulu'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
@@ -209,6 +210,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'vocab',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
