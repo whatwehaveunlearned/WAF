@@ -31,32 +31,32 @@ class Languages(models.Model):
 #English Class
 class English(Vocab):
 	word = models.CharField(max_length=100)
-	translation1 = models.ForeignKey('Chinese',related_name='englishtrans1',null=True, blank=True,default='no')
-	translation2 = models.ForeignKey('Chinese',related_name='englishtrans2',null=True, blank=True,default='no')
-	translation3 = models.ForeignKey('Spanish',related_name='englishtrans3',null=True, blank=True,default='no')
-	translation4 = models.ForeignKey('Spanish',related_name='englishtrans4',null=True, blank=True,default='no')
-	translation5 = models.ForeignKey('English',related_name='englishtrans5',null=True, blank=True,default='no')
-	translation6 = models.ForeignKey('English',related_name='englishtrans6',null=True, blank=True,default='no')
+	translation1 = models.ForeignKey('Chinese',related_name='englishtrans1',null=True, blank=True)
+	translation2 = models.ForeignKey('Chinese',related_name='englishtrans2',null=True, blank=True)
+	translation3 = models.ForeignKey('Spanish',related_name='englishtrans3',null=True, blank=True)
+	translation4 = models.ForeignKey('Spanish',related_name='englishtrans4',null=True, blank=True)
+	translation5 = models.ForeignKey('English',related_name='englishtrans5',null=True, blank=True)
+	translation6 = models.ForeignKey('English',related_name='englishtrans6',null=True, blank=True)
 #Chinese Class
 class Chinese(Vocab):
 	word = models.CharField(max_length=100)
 	symbol = models.CharField(max_length=20) #HOW TO PUT CHINESE CHARACTERS??
-	translation1 = models.ForeignKey('Chinese',related_name='chinesetrans1',null=True, blank=True,default='no')
-	translation2 = models.ForeignKey('Chinese',related_name='chinesetrans2',null=True, blank=True,default='no')
-	translation3 = models.ForeignKey('Spanish',related_name='chinesetrans3',null=True, blank=True,default='no')
-	translation4 = models.ForeignKey('Spanish',related_name='chinesetrans4',null=True, blank=True,default='no')
-	translation5 = models.ForeignKey('English',related_name='chinesetrans5',null=True, blank=True,default='no')
-	translation6 = models.ForeignKey('English',related_name='chinesetrans6',null=True, blank=True,default='no')
+	translation1 = models.ForeignKey('Chinese',related_name='chinesetrans1',null=True, blank=True)
+	translation2 = models.ForeignKey('Chinese',related_name='chinesetrans2',null=True, blank=True)
+	translation3 = models.ForeignKey('Spanish',related_name='chinesetrans3',null=True, blank=True)
+	translation4 = models.ForeignKey('Spanish',related_name='chinesetrans4',null=True, blank=True)
+	translation5 = models.ForeignKey('English',related_name='chinesetrans5',null=True, blank=True)
+	translation6 = models.ForeignKey('English',related_name='chinesetrans6',null=True, blank=True)
 
 #Spanish Class
 class Spanish(Vocab):
 	word = models.CharField(max_length=100)
-	translation1 = models.ForeignKey('Chinese',related_name='spanishtrans1',null=True, blank=True,default='no')
-	translation2 = models.ForeignKey('Chinese',related_name='spanishtrans2',null=True, blank=True,default='no')
-	translation3 = models.ForeignKey('Spanish',related_name='spanishtrans3',null=True, blank=True,default='no')
-	translation4 = models.ForeignKey('Spanish',related_name='spanishtrans4',null=True, blank=True,default='no')
-	translation5 = models.ForeignKey('English',related_name='spanishtrans5',null=True, blank=True,default='no')
-	translation6 = models.ForeignKey('English',related_name='spanishtrans6',null=True, blank=True,default='no')
+	translation1 = models.ForeignKey('Chinese',related_name='spanishtrans1',null=True, blank=True)
+	translation2 = models.ForeignKey('Chinese',related_name='spanishtrans2',null=True, blank=True)
+	translation3 = models.ForeignKey('Spanish',related_name='spanishtrans3',null=True, blank=True)
+	translation4 = models.ForeignKey('Spanish',related_name='spanishtrans4',null=True, blank=True)
+	translation5 = models.ForeignKey('English',related_name='spanishtrans5',null=True, blank=True)
+	translation6 = models.ForeignKey('English',related_name='spanishtrans6',null=True, blank=True)
 ####################################################################################
 
 #Models for the user
@@ -64,6 +64,8 @@ class WafUser(User):
 	firstLanguage = models.ForeignKey('Languages',related_name='firstLanguage')
 	secondLanguage = models.ForeignKey('Languages',related_name='secondLanguage',blank=True)
 	thirdLanguage = models.ForeignKey('Languages',related_name='thirdLanguage',blank=True)
+
+#Models for WAF Exercises
 
 
 

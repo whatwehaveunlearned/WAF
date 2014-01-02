@@ -22,6 +22,14 @@ TEMPLATE_DEBUG = DEBUG
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ########## END EMAIL CONFIGURATION
 
+########## MEDIA CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+MEDIA_URL = 'http://localhost:8000/Users/agonzamart/Documents/WAF/waf_project/waf_project/media/'
+########## END MEDIA CONFIGURATION
+
 
 ########## DATABASE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
